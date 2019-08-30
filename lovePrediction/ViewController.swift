@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         yourPatnerNameTxt.text = yourPatnerName
        
         
-        var randomNumberIndex: Int = 0
+        
         var randomNumberGenerator = Int.random(in: 0 ..< 100)
          displayLbl.text = String(randomNumberGenerator)
         
