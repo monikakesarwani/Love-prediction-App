@@ -42,16 +42,24 @@ class ViewController: UIViewController {
     
     func update(){
         
-        var yourName: String = ""
-        var yourPatnerName: String = ""
+        let yourName: String = ""
+        let yourPatnerName: String = ""
         var display: String = ""
         yourNametxt.text = yourName
         yourPatnerNameTxt.text = yourPatnerName
        
         
         
-        var randomNumberGenerator = Int.random(in: 0 ..< 100)
+        let randomNumberGenerator = Int.random(in: 0 ..< 100)
          displayLbl.text = String(randomNumberGenerator)
+        
+        
+        if yourNametxt.text == nil && yourPatnerNameTxt.text == nil {
+            "Put Your Name"
+        }else{
+            
+            
+        }
         
         
         
