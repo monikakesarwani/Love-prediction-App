@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLbl: UILabel!
     
    
-    @IBOutlet weak var goLable: UIButton!
+    @IBOutlet weak var goButton: UIButton!
     
     @IBOutlet weak var restartLabel: UIButton!
     
@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setup()
+        
+        
         
     }
     
@@ -52,9 +54,11 @@ class ViewController: UIViewController {
             yourPatnerNameTxt.text = yourPatnerName
             randomNumberGenerator = Int.random(in: 0 ..< 100)
             displayLbl.text = "Your love score is \(randomNumberGenerator) %"
-            goLable.isHidden = false
+           // goButton.isHidden = false
             displayLbl.isHidden = false
+            restartLabel.isHidden = false
         
+
             
         
     
@@ -64,16 +68,7 @@ class ViewController: UIViewController {
     
 
     
-    func setup() {
     
-        goLable.isHidden = false
-        displayLbl.isHidden = true
-        
-        yourNametxt.isHidden = false
-        yourNametxt.isHidden = false
-        restart()
-        
-    }
     
     
     
@@ -82,8 +77,10 @@ class ViewController: UIViewController {
         
     }
     
-    func restart(){
-        restartLabel.isHidden = true
+    func setup(){
+    restartLabel.isHidden = true
+    displayLbl.isHidden = true
+
     }
     
 }
