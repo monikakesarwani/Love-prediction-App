@@ -11,22 +11,33 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    let yourName: String = ""
+    let yourPatnerName: String = ""
+    var display: String = ""
+    var randomNumberGenerator : Int = 0
+    //var pressed: Int = 1
+    
+    
+    
     @IBOutlet weak var yourNametxt: UITextField!
     
     
     @IBOutlet weak var yourPatnerNameTxt: UITextField!
     
     
-    
     @IBOutlet weak var displayLbl: UILabel!
     
    
+    @IBOutlet weak var goLable: UIButton!
     
+    @IBOutlet weak var restartLabel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        update()
+        
+        setup()
+        
     }
     
     
@@ -36,33 +47,43 @@ class ViewController: UIViewController {
 
     @IBAction func goButton(_ sender: UIButton) {
         
-        update()
+        
+            yourNametxt.text = yourName
+            yourPatnerNameTxt.text = yourPatnerName
+            randomNumberGenerator = Int.random(in: 0 ..< 100)
+            displayLbl.text = "Your love score is \(randomNumberGenerator) %"
+            goLable.isHidden = false
+            displayLbl.isHidden = false
+        
+            
+        
+    
+       
         
     }
     
-    func update(){
+
+    
+    func setup() {
+    
+        goLable.isHidden = false
+        displayLbl.isHidden = true
         
-        let yourName: String = ""
-        let yourPatnerName: String = ""
-        var display: String = ""
-        yourNametxt.text = yourName
-        yourPatnerNameTxt.text = yourPatnerName
-       
+        yourNametxt.isHidden = false
+        yourNametxt.isHidden = false
+        restart()
         
+    }
+    
+    
+    
+    @IBAction func restartButton(_ sender: UIButton) {
+        setup()
         
-        let randomNumberGenerator = Int.random(in: 0 ..< 100)
-         displayLbl.text = String(randomNumberGenerator)
-        
-        
-        if yourNametxt.text == nil && yourPatnerNameTxt.text == nil {
-            "Put Your Name"
-        }else{
-            
-            
-        }
-        
-        
-        
+    }
+    
+    func restart(){
+        restartLabel.isHidden = true
     }
     
 }
